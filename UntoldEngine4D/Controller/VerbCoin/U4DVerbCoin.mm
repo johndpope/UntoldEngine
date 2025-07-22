@@ -8,9 +8,11 @@
 
 #include "U4DVerbCoin.h"
 #include "U4DVerbIcon.h"
-#include "U4DTouches.h"
-#include "U4DDirector.h"
+#include "../../Touches/U4DTouches.h"
+#include "../../Director/U4DDirector.h"
 #include <cmath>
+
+using namespace U4DEngine;
 
 U4DVerbCoin::U4DVerbCoin() :
     verbCoinState(eVerbCoinHidden),
@@ -163,7 +165,7 @@ void U4DVerbCoin::setCallback(U4DCallbackInterface *callback) {
 void U4DVerbCoin::touchBegan(U4DTouches *touches) {
     if (touches == nullptr || !isVisible()) return;
     
-    U4DVector2n touchPosition(touches->x, touches->y);
+    U4DVector2n touchPosition(touches->xTouch, touches->yTouch);
     U4DVerbIcon* iconAtPosition = getIconAtPosition(touchPosition);
     
     if (iconAtPosition != nullptr) {
@@ -178,7 +180,7 @@ void U4DVerbCoin::touchBegan(U4DTouches *touches) {
 void U4DVerbCoin::touchMoved(U4DTouches *touches) {
     if (touches == nullptr || !isVisible()) return;
     
-    U4DVector2n touchPosition(touches->x, touches->y);
+    U4DVector2n touchPosition(touches->xTouch, touches->yTouch);
     U4DVerbIcon* iconAtPosition = getIconAtPosition(touchPosition);
     
     if (hoveredIcon != iconAtPosition) {
@@ -199,7 +201,7 @@ void U4DVerbCoin::touchMoved(U4DTouches *touches) {
 void U4DVerbCoin::touchEnded(U4DTouches *touches) {
     if (touches == nullptr || !isVisible()) return;
     
-    U4DVector2n touchPosition(touches->x, touches->y);
+    U4DVector2n touchPosition(touches->xTouch, touches->yTouch);
     U4DVerbIcon* iconAtPosition = getIconAtPosition(touchPosition);
     
     if (iconAtPosition != nullptr) {

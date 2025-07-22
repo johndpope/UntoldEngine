@@ -9,6 +9,8 @@
 #include "U4DInteractiveEntity.h"
 #include "U4DVerbCoinManager.h"
 
+using namespace U4DEngine;
+
 U4DInteractiveEntity::U4DInteractiveEntity() :
     isInteractable(true),
     showVerbCoinOnTouch(true),
@@ -182,4 +184,13 @@ void U4DInteractiveEntity::addDefaultTalkVerb(U4DCallbackInterface *callback) {
 
 void U4DInteractiveEntity::addDefaultPickUpVerb(U4DCallbackInterface *callback) {
     addVerb(eVerbPickUp, "pickup_icon.png", "Pick up", callback);
+}
+
+void U4DInteractiveEntity::setTexture(const std::string& textureName) {
+    // Set the diffuse texture for the interactive entity
+    textureInformation.setDiffuseTexture(textureName.c_str());
+    setHasTexture(true);
+    
+    // Load the rendering information to apply the texture
+    loadRenderingInformation();
 }

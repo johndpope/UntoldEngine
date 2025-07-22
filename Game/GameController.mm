@@ -78,8 +78,8 @@ void GameController::setupInteractiveObjects(){
     interactiveChest = new U4DInteractiveEntity();
     interactiveChest->setEntityName("treasure_chest");
     interactiveChest->setDescription("A mysterious treasure chest");
-    interactiveChest->loadTexture("chest.png");
-    interactiveChest->translateTo(U4DEngine::U4DVector3n(-0.3, 0.2, 0));
+    interactiveChest->setTexture("chest.png");
+    interactiveChest->translateTo(-0.3f, 0.2f, 0.0f);
     
     // Add verbs to chest
     U4DEngine::U4DCallback<GameController>* examineChestCallback = new U4DEngine::U4DCallback<GameController>;
@@ -100,8 +100,8 @@ void GameController::setupInteractiveObjects(){
     interactiveDoor = new U4DInteractiveEntity();
     interactiveDoor->setEntityName("wooden_door");
     interactiveDoor->setDescription("A heavy wooden door");
-    interactiveDoor->loadTexture("door.png");
-    interactiveDoor->translateTo(U4DEngine::U4DVector3n(0.3, 0.2, 0));
+    interactiveDoor->setTexture("door.png");
+    interactiveDoor->translateTo(0.3f, 0.2f, 0.0f);
     
     // Add verbs to door
     U4DEngine::U4DCallback<GameController>* examineDoorCallback = new U4DEngine::U4DCallback<GameController>;
@@ -118,8 +118,8 @@ void GameController::setupInteractiveObjects(){
     interactiveCharacter = new U4DInteractiveEntity();
     interactiveCharacter->setEntityName("village_npc");
     interactiveCharacter->setDescription("A friendly village NPC");
-    interactiveCharacter->loadTexture("character.png");
-    interactiveCharacter->translateTo(U4DEngine::U4DVector3n(0.0, -0.2, 0));
+    interactiveCharacter->setTexture("character.png");
+    interactiveCharacter->translateTo(0.0f, -0.2f, 0.0f);
     
     // Add verbs to character
     U4DEngine::U4DCallback<GameController>* examineCharacterCallback = new U4DEngine::U4DCallback<GameController>;

@@ -19,7 +19,10 @@
 using namespace U4DEngine;
 
 class U4DVerbIcon;
-class U4DTouches;
+
+namespace U4DEngine {
+    class U4DTouches;
+}
 
 typedef enum{
     eVerbCoinIdle,
@@ -90,9 +93,9 @@ public:
     
     void setCallback(U4DEngine::U4DCallbackInterface *callback);
     
-    void touchBegan(U4DTouches *touches);
-    void touchMoved(U4DTouches *touches);
-    void touchEnded(U4DTouches *touches);
+    void touchBegan(U4DEngine::U4DTouches *touches);
+    void touchMoved(U4DEngine::U4DTouches *touches);
+    void touchEnded(U4DEngine::U4DTouches *touches);
     
     void addVerb(VERBTYPE type, const std::string& iconTexture, const std::string& tooltipText, U4DEngine::U4DCallbackInterface *callback);
     

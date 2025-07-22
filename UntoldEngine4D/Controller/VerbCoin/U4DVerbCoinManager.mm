@@ -9,10 +9,12 @@
 #include "U4DVerbCoinManager.h"
 #include "U4DVerbCoin.h"
 #include "U4DInteractiveEntity.h"
-#include "U4DTouches.h"
-#include "U4DDirector.h"
-#include "U4DWorld.h"
+#include "../../Touches/U4DTouches.h"
+#include "../../Director/U4DDirector.h"
+#include "../../View/World/U4DWorld.h"
 #include <cmath>
+
+using namespace U4DEngine;
 
 U4DVerbCoinManager* U4DVerbCoinManager::instance = nullptr;
 
@@ -126,7 +128,7 @@ void U4DVerbCoinManager::setGlobalVerbCallback(U4DCallbackInterface *callback) {
 void U4DVerbCoinManager::touchBegan(U4DTouches *touches) {
     if (touches == nullptr) return;
     
-    U4DVector2n touchPosition(touches->x, touches->y);
+    U4DVector2n touchPosition(touches->xTouch, touches->yTouch);
     
     if (isVerbCoinVisible()) {
         activeVerbCoin->touchBegan(touches);
@@ -146,7 +148,7 @@ void U4DVerbCoinManager::touchMoved(U4DTouches *touches) {
         return;
     }
     
-    U4DVector2n currentPosition(touches->x, touches->y);
+    U4DVector2n currentPosition(touches->xTouch, touches->yTouch);
     float distance = sqrt(pow(currentPosition.x - pressStartPosition.x, 2) + 
                          pow(currentPosition.y - pressStartPosition.y, 2));
     
@@ -167,7 +169,7 @@ void U4DVerbCoinManager::touchEnded(U4DTouches *touches) {
     isLongPressing = false;
     currentPressTime = 0.0f;
     
-    U4DVector2n touchPosition(touches->x, touches->y);
+    U4DVector2n touchPosition(touches->xTouch, touches->yTouch);
     U4DEntity* entityAtPosition = getEntityAtPosition(touchPosition);
     
     if (entityAtPosition != nullptr) {
@@ -184,11 +186,9 @@ void U4DVerbCoinManager::touchEnded(U4DTouches *touches) {
 
 U4DEntity* U4DVerbCoinManager::getEntityAtPosition(U4DVector2n position) {
     U4DDirector* director = U4DDirector::sharedInstance();
-    U4DWorld* world = director->getWorld();
     
-    if (world == nullptr) return nullptr;
-    
-    return world->searchChild("interactive");
+    // Use director's searchChild method directly
+    return director->searchChild("interactive");
 }
 
 void U4DVerbCoinManager::addDefaultVerbs(U4DEntity* entity) {

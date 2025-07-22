@@ -10,14 +10,19 @@
 #define U4DVerbCoinManager_h
 
 #include <stdio.h>
-#include "U4DVector2n.h"
-#include "U4DCallbackInterface.h"
+#include "../../MathematicEngine/U4DVector2n.h"
+#include "../../Callback/U4DCallbackInterface.h"
 #include <vector>
 #include <map>
 
+using namespace U4DEngine;
+
 class U4DVerbCoin;
-class U4DEntity;
-class U4DTouches;
+
+namespace U4DEngine {
+    class U4DEntity;
+    class U4DTouches;
+}
 
 struct VerbData;
 
@@ -38,11 +43,11 @@ private:
     float longPressDuration;
     float currentPressTime;
     bool isLongPressing;
-    U4DVector2n pressStartPosition;
+    U4DEngine::U4DVector2n pressStartPosition;
     
-    std::map<U4DEntity*, std::vector<VerbData>> entityVerbMap;
+    std::map<U4DEngine::U4DEntity*, std::vector<VerbData>> entityVerbMap;
     
-    U4DCallbackInterface *globalVerbCallback;
+    U4DEngine::U4DCallbackInterface *globalVerbCallback;
     
     U4DVerbCoinManager();
     
@@ -54,28 +59,28 @@ public:
     
     void update(double dt);
     
-    void showVerbCoinAtPosition(U4DVector2n position, U4DEntity* targetEntity = nullptr);
+    void showVerbCoinAtPosition(U4DEngine::U4DVector2n position, U4DEngine::U4DEntity* targetEntity = nullptr);
     
     void hideVerbCoin();
     
     bool isVerbCoinVisible();
     
-    void registerEntityVerbs(U4DEntity* entity, std::vector<VerbData>& verbs);
+    void registerEntityVerbs(U4DEngine::U4DEntity* entity, std::vector<VerbData>& verbs);
     
-    void unregisterEntity(U4DEntity* entity);
+    void unregisterEntity(U4DEngine::U4DEntity* entity);
     
     void setLongPressDuration(float duration);
     float getLongPressDuration();
     
-    void setGlobalVerbCallback(U4DCallbackInterface *callback);
+    void setGlobalVerbCallback(U4DEngine::U4DCallbackInterface *callback);
     
-    void touchBegan(U4DTouches *touches);
-    void touchMoved(U4DTouches *touches);
-    void touchEnded(U4DTouches *touches);
+    void touchBegan(U4DEngine::U4DTouches *touches);
+    void touchMoved(U4DEngine::U4DTouches *touches);
+    void touchEnded(U4DEngine::U4DTouches *touches);
     
-    U4DEntity* getEntityAtPosition(U4DVector2n position);
+    U4DEngine::U4DEntity* getEntityAtPosition(U4DEngine::U4DVector2n position);
     
-    void addDefaultVerbs(U4DEntity* entity);
+    void addDefaultVerbs(U4DEngine::U4DEntity* entity);
     
     void clearAllEntityVerbs();
     

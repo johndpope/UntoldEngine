@@ -10,15 +10,16 @@
 #define U4DInteractiveEntity_h
 
 #include <stdio.h>
-#include "U4DVisibleEntity.h"
-#include "U4DVector2n.h"
-#include "U4DCallbackInterface.h"
+#include "../../Objects/BodyObjects/U4DStaticModel.h"
+#include "../../MathematicEngine/U4DVector2n.h"
+#include "../../Callback/U4DCallbackInterface.h"
+#include "U4DVerbCoin.h" // For VERBTYPE and VerbData
 #include <vector>
 #include <string>
 
-struct VerbData;
+using namespace U4DEngine;
 
-class U4DInteractiveEntity : public U4DVisibleEntity {
+class U4DInteractiveEntity : public U4DEngine::U4DStaticModel {
     
 private:
     
@@ -29,7 +30,7 @@ private:
     bool isInteractable;
     bool showVerbCoinOnTouch;
     
-    U4DCallbackInterface *defaultActionCallback;
+    U4DEngine::U4DCallbackInterface *defaultActionCallback;
     
 public:
     
@@ -37,7 +38,7 @@ public:
     
     ~U4DInteractiveEntity();
     
-    void addVerb(VERBTYPE type, const std::string& iconTexture, const std::string& tooltipText, U4DCallbackInterface *callback);
+    void addVerb(VERBTYPE type, const std::string& iconTexture, const std::string& tooltipText, U4DEngine::U4DCallbackInterface *callback);
     
     void removeVerb(VERBTYPE type);
     
@@ -57,10 +58,10 @@ public:
     void setDescription(const std::string& desc);
     std::string getDescription();
     
-    void setDefaultActionCallback(U4DCallbackInterface *callback);
-    U4DCallbackInterface* getDefaultActionCallback();
+    void setDefaultActionCallback(U4DEngine::U4DCallbackInterface *callback);
+    U4DEngine::U4DCallbackInterface* getDefaultActionCallback();
     
-    void onTouch(U4DVector2n touchPosition);
+    void onTouch(U4DEngine::U4DVector2n touchPosition);
     
     void executeDefaultAction();
     
@@ -68,13 +69,16 @@ public:
     
     VerbData* getVerb(VERBTYPE type);
     
-    void addDefaultExamineVerb(U4DCallbackInterface *callback);
+    void addDefaultExamineVerb(U4DEngine::U4DCallbackInterface *callback);
     
-    void addDefaultUseVerb(U4DCallbackInterface *callback);
+    void addDefaultUseVerb(U4DEngine::U4DCallbackInterface *callback);
     
-    void addDefaultTalkVerb(U4DCallbackInterface *callback);
+    void addDefaultTalkVerb(U4DEngine::U4DCallbackInterface *callback);
     
-    void addDefaultPickUpVerb(U4DCallbackInterface *callback);
+    void addDefaultPickUpVerb(U4DEngine::U4DCallbackInterface *callback);
+    
+    // Convenience method for texture loading
+    void setTexture(const std::string& textureName);
     
 };
 
