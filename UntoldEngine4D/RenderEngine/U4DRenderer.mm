@@ -343,6 +343,7 @@
     MTLTextureDescriptor *shadowTextureDescriptor=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatDepth32Float width:1024 height:1024 mipmapped:NO];
     
     shadowTextureDescriptor.storageMode=MTLStorageModePrivate;
+    shadowTextureDescriptor.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead;
     
     shadowTexture=[mtlDevice newTextureWithDescriptor:shadowTextureDescriptor];
     

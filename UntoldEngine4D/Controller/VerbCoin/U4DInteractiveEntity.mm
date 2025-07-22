@@ -8,6 +8,7 @@
 
 #include "U4DInteractiveEntity.h"
 #include "U4DVerbCoinManager.h"
+#import <Foundation/Foundation.h>
 
 using namespace U4DEngine;
 
@@ -187,8 +188,20 @@ void U4DInteractiveEntity::addDefaultPickUpVerb(U4DCallbackInterface *callback) 
 }
 
 void U4DInteractiveEntity::setTexture(const std::string& textureName) {
+    std::string actualTextureName = textureName;
+    
+    // Check if the requested texture file exists in the Resources directory
+    std::string resourcePath = std::string([[NSBundle mainBundle].resourcePath UTF8String]) + "/" + textureName;
+    NSString *nsResourcePath = [NSString stringWithUTF8String:resourcePath.c_str()];
+    
+    // If the file doesn't exist, use placeholder.png as fallback  
+    if (![[NSFileManager defaultManager] fileExistsAtPath:nsResourcePath]) {
+        actualTextureName = "placeholder.png";
+        NSLog(@"Warning: Texture file '%s' not found. Using placeholder.png instead.", textureName.c_str());
+    }
+    
     // Set the diffuse texture for the interactive entity
-    textureInformation.setDiffuseTexture(textureName.c_str());
+    textureInformation.setDiffuseTexture(actualTextureName.c_str());
     setHasTexture(true);
     
     // Load the rendering information to apply the texture

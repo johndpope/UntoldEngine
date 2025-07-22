@@ -96,6 +96,9 @@ namespace U4DEngine {
         
         MTLTextureDescriptor *textureDescriptor=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm width:imageWidth height:imageHeight mipmapped:NO];
         
+        // Set proper usage flags for shader reading
+        textureDescriptor.usage = MTLTextureUsageShaderRead;
+        
         //Create the texture object
         textureObject=[mtlDevice newTextureWithDescriptor:textureDescriptor];
         
@@ -134,6 +137,9 @@ namespace U4DEngine {
         //Create the texture descriptor
         
         MTLTextureDescriptor *normalMapTextureDescriptor=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm width:imageWidth height:imageHeight mipmapped:NO];
+        
+        // Set proper usage flags for shader reading
+        normalMapTextureDescriptor.usage = MTLTextureUsageShaderRead;
         
         //Create the normal texture object
         normalMapTextureObject=[mtlDevice newTextureWithDescriptor:normalMapTextureDescriptor];

@@ -838,6 +838,10 @@
 		832B140C2E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */; };
 		832B140D2E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */; };
 		832B140E2E3023D600AFBC82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 832B13F12E3023D600AFBC82 /* README.md */; };
+		832B14152E302DA200AFBC82 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 832B14142E302DA200AFBC82 /* placeholder.png */; };
+		832B14162E302DA200AFBC82 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 832B14142E302DA200AFBC82 /* placeholder.png */; };
+		832B14172E302DA200AFBC82 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 832B14142E302DA200AFBC82 /* placeholder.png */; };
+		832B14182E302DA200AFBC82 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 832B14142E302DA200AFBC82 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1253,6 +1257,7 @@
 		832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DVerbCoinManager.mm; sourceTree = "<group>"; };
 		832B13F82E3023D600AFBC82 /* U4DVerbIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U4DVerbIcon.h; sourceTree = "<group>"; };
 		832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DVerbIcon.mm; sourceTree = "<group>"; };
+		832B14142E302DA200AFBC82 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1789,6 +1794,7 @@
 		037E2066192D3DED00D375F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				832B14142E302DA200AFBC82 /* placeholder.png */,
 				0304CE7421266431005A0C4C /* astronaut.png */,
 				0304CE7721266432005A0C4C /* astronautAttributes.u4d */,
 				0304CE7621266432005A0C4C /* astronautWalkAnim.u4d */,
@@ -2447,6 +2453,7 @@
 				0304CE8021266432005A0C4C /* astronautWalkAnim.u4d in Resources */,
 				03722D3F2029F16C0080D069 /* joyStickBackground.png in Resources */,
 				03722D2C2029F16C0080D069 /* myFont.png in Resources */,
+				832B14162E302DA200AFBC82 /* placeholder.png in Resources */,
 				0304CE7D21266432005A0C4C /* charactersAttributes.u4d in Resources */,
 				03722D342029F16C0080D069 /* BackImage.png in Resources */,
 				0304CE8321266432005A0C4C /* astronautAttributes.u4d in Resources */,
@@ -2477,6 +2484,7 @@
 				03722D4E2029F16D0080D069 /* BackImage.png in Resources */,
 				832B13FF2E3023D600AFBC82 /* README.md in Resources */,
 				03722D5C2029F16D0080D069 /* ButtonAPressed.png in Resources */,
+				832B14182E302DA200AFBC82 /* placeholder.png in Resources */,
 				03722D522029F16D0080D069 /* RightImage.png in Resources */,
 				03722D5B2029F16D0080D069 /* ButtonA.png in Resources */,
 				03722D472029F16D0080D069 /* myFont.xml in Resources */,
@@ -2505,6 +2513,7 @@
 				03722D762029F16D0080D069 /* ButtonAPressed.png in Resources */,
 				03722D6C2029F16D0080D069 /* RightImage.png in Resources */,
 				0304CE8721266432005A0C4C /* greyrocks.png in Resources */,
+				832B14172E302DA200AFBC82 /* placeholder.png in Resources */,
 				03722D752029F16D0080D069 /* ButtonA.png in Resources */,
 				03722D612029F16D0080D069 /* myFont.xml in Resources */,
 				0304CE8121266432005A0C4C /* astronautWalkAnim.u4d in Resources */,
@@ -2526,6 +2535,7 @@
 				0361DFA21FAC2141004770FD /* TopImage.png in Resources */,
 				0361DFA51FAC2141004770FD /* RightImage.png in Resources */,
 				0361DFA31FAC2141004770FD /* BottomImage.png in Resources */,
+				832B14152E302DA200AFBC82 /* placeholder.png in Resources */,
 				03C737A41A4F1D9F001B4F77 /* joystickDriver.png in Resources */,
 				0304CE8521266432005A0C4C /* greyrocks.png in Resources */,
 				03798F8D1934DA8E00CF0600 /* ButtonB.png in Resources */,
