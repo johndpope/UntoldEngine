@@ -16,6 +16,8 @@
 #include "U4DCamera.h"
 #include "U4DJoyStick.h"
 #include "Earth.h"
+#include "U4DInteractiveEntity.h"
+#include "U4DVerbCoinManager.h"
 
 void GameController::init(){
     
@@ -62,6 +64,73 @@ void GameController::init(){
     buttonBCallback->scheduleClassWithMethod(this, &GameController::actionOnButtonB);
     
     myButtonB->setCallbackAction(buttonBCallback);
+    
+    // Create interactive objects for verb coin demo
+    setupInteractiveObjects();
+    
+}
+
+void GameController::setupInteractiveObjects(){
+    
+    Earth *earth=dynamic_cast<Earth*>(getGameWorld());
+    
+    // Create interactive chest
+    interactiveChest = new U4DInteractiveEntity();
+    interactiveChest->setEntityName("treasure_chest");
+    interactiveChest->setDescription("A mysterious treasure chest");
+    interactiveChest->loadTexture("chest.png");
+    interactiveChest->translateTo(U4DEngine::U4DVector3n(-0.3, 0.2, 0));
+    
+    // Add verbs to chest
+    U4DEngine::U4DCallback<GameController>* examineChestCallback = new U4DEngine::U4DCallback<GameController>;
+    examineChestCallback->scheduleClassWithMethod(this, &GameController::examineChest);
+    interactiveChest->addDefaultExamineVerb(examineChestCallback);
+    
+    U4DEngine::U4DCallback<GameController>* openChestCallback = new U4DEngine::U4DCallback<GameController>;
+    openChestCallback->scheduleClassWithMethod(this, &GameController::openChest);
+    interactiveChest->addDefaultUseVerb(openChestCallback);
+    
+    U4DEngine::U4DCallback<GameController>* pickUpCallback = new U4DEngine::U4DCallback<GameController>;
+    pickUpCallback->scheduleClassWithMethod(this, &GameController::pickUpFromChest);
+    interactiveChest->addDefaultPickUpVerb(pickUpCallback);
+    
+    earth->addChild(interactiveChest, -5);
+    
+    // Create interactive door
+    interactiveDoor = new U4DInteractiveEntity();
+    interactiveDoor->setEntityName("wooden_door");
+    interactiveDoor->setDescription("A heavy wooden door");
+    interactiveDoor->loadTexture("door.png");
+    interactiveDoor->translateTo(U4DEngine::U4DVector3n(0.3, 0.2, 0));
+    
+    // Add verbs to door
+    U4DEngine::U4DCallback<GameController>* examineDoorCallback = new U4DEngine::U4DCallback<GameController>;
+    examineDoorCallback->scheduleClassWithMethod(this, &GameController::examineDoor);
+    interactiveDoor->addDefaultExamineVerb(examineDoorCallback);
+    
+    U4DEngine::U4DCallback<GameController>* openDoorCallback = new U4DEngine::U4DCallback<GameController>;
+    openDoorCallback->scheduleClassWithMethod(this, &GameController::openDoor);
+    interactiveDoor->addDefaultUseVerb(openDoorCallback);
+    
+    earth->addChild(interactiveDoor, -6);
+    
+    // Create interactive character
+    interactiveCharacter = new U4DInteractiveEntity();
+    interactiveCharacter->setEntityName("village_npc");
+    interactiveCharacter->setDescription("A friendly village NPC");
+    interactiveCharacter->loadTexture("character.png");
+    interactiveCharacter->translateTo(U4DEngine::U4DVector3n(0.0, -0.2, 0));
+    
+    // Add verbs to character
+    U4DEngine::U4DCallback<GameController>* examineCharacterCallback = new U4DEngine::U4DCallback<GameController>;
+    examineCharacterCallback->scheduleClassWithMethod(this, &GameController::examineCharacter);
+    interactiveCharacter->addDefaultExamineVerb(examineCharacterCallback);
+    
+    U4DEngine::U4DCallback<GameController>* talkCallback = new U4DEngine::U4DCallback<GameController>;
+    talkCallback->scheduleClassWithMethod(this, &GameController::talkToCharacter);
+    interactiveCharacter->addDefaultTalkVerb(talkCallback);
+    
+    earth->addChild(interactiveCharacter, -7);
     
 }
 
@@ -143,4 +212,68 @@ void GameController::actionOnJoystick(){
     sendUserInputUpdate(&controllerInputMessage);
 }
 
+// Verb action implementations
+void GameController::examineChest() {
+    // In a real game, this would show descriptive text or dialogue
+    // For now, we'll just send a message indicating the action
+    ControllerInputMessage message;
+    message.controllerInputType = actionButtonA;
+    message.controllerInputData = buttonPressed;
+    sendUserInputUpdate(&message);
+    // Could add: Display "The chest looks ancient and mysterious..."
+}
+
+void GameController::openChest() {
+    // Open animation, reveal contents, etc.
+    ControllerInputMessage message;
+    message.controllerInputType = actionButtonB;
+    message.controllerInputData = buttonPressed;
+    sendUserInputUpdate(&message);
+    // Could add: Play opening animation, show inventory items
+}
+
+void GameController::pickUpFromChest() {
+    // Add items to inventory
+    ControllerInputMessage message;
+    message.controllerInputType = actionJoystick;
+    message.controllerInputData = joystickActive;
+    sendUserInputUpdate(&message);
+    // Could add: Transfer items to player inventory
+}
+
+void GameController::examineDoor() {
+    // Show door description
+    ControllerInputMessage message;
+    message.controllerInputType = actionButtonA;
+    message.controllerInputData = buttonPressed;
+    sendUserInputUpdate(&message);
+    // Could add: Display "A sturdy wooden door with iron hinges..."
+}
+
+void GameController::openDoor() {
+    // Try to open the door
+    ControllerInputMessage message;
+    message.controllerInputType = actionButtonB;
+    message.controllerInputData = buttonPressed;
+    sendUserInputUpdate(&message);
+    // Could add: Check for key, play animation, load new scene
+}
+
+void GameController::examineCharacter() {
+    // Show character description
+    ControllerInputMessage message;
+    message.controllerInputType = actionButtonA;
+    message.controllerInputData = buttonPressed;
+    sendUserInputUpdate(&message);
+    // Could add: Display "A friendly villager with a warm smile..."
+}
+
+void GameController::talkToCharacter() {
+    // Start dialogue
+    ControllerInputMessage message;
+    message.controllerInputType = actionButtonB;
+    message.controllerInputData = buttonPressed;
+    sendUserInputUpdate(&message);
+    // Could add: Show dialogue tree, start conversation system
+}
 

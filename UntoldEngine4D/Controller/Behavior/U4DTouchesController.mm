@@ -12,11 +12,15 @@
 #include "U4DButton.h"
 #include "U4DJoyStick.h"
 #include "U4DWorld.h"
+#include "U4DVerbCoinManager.h"
+#include "U4DTouches.h"
 
 namespace U4DEngine {
     
 //constructor
-U4DTouchesController::U4DTouchesController():receivedAction(false){}
+U4DTouchesController::U4DTouchesController():receivedAction(false){
+    verbCoinManager = U4DVerbCoinManager::sharedInstance();
+}
 
 //destructor
 U4DTouchesController::~U4DTouchesController(){}
@@ -47,6 +51,15 @@ U4DGameModelInterface* U4DTouchesController::getGameModel(){
     
 void U4DTouchesController::touchBegan(const U4DTouches &touches){
     
+    // Pass touch to verb coin manager first
+    U4DTouches* nonConstTouches = const_cast<U4DTouches*>(&touches);
+    verbCoinManager->touchBegan(nonConstTouches);
+    
+    // If verb coin handled the touch, don't process further
+    if (verbCoinManager->isVerbCoinVisible()) {
+        return;
+    }
+    
     U4DEngine::TOUCHSTATE touchBegan=U4DEngine::rTouchesBegan;
     
     changeState(touches, touchBegan);
@@ -54,6 +67,15 @@ void U4DTouchesController::touchBegan(const U4DTouches &touches){
 
 void U4DTouchesController::touchMoved(const U4DTouches &touches){
  
+    // Pass touch to verb coin manager first
+    U4DTouches* nonConstTouches = const_cast<U4DTouches*>(&touches);
+    verbCoinManager->touchMoved(nonConstTouches);
+    
+    // If verb coin is visible, it handles all movement
+    if (verbCoinManager->isVerbCoinVisible()) {
+        return;
+    }
+    
     U4DEngine::TOUCHSTATE touchMoved=U4DEngine::rTouchesMoved;
     
     changeState(touches, touchMoved);
@@ -61,6 +83,15 @@ void U4DTouchesController::touchMoved(const U4DTouches &touches){
 }
 
 void U4DTouchesController::touchEnded(const U4DTouches &touches){
+    
+    // Pass touch to verb coin manager first
+    U4DTouches* nonConstTouches = const_cast<U4DTouches*>(&touches);
+    verbCoinManager->touchEnded(nonConstTouches);
+    
+    // If verb coin handled the touch, don't process further
+    if (verbCoinManager->isVerbCoinVisible()) {
+        return;
+    }
     
     U4DEngine::TOUCHSTATE touchEnded=U4DEngine::rTouchesEnded;
     

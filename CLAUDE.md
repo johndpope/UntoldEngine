@@ -156,3 +156,7 @@ Multi-platform input handling:
 - Examine render managers to understand graphics pipeline
 - Study collision detection for physics integration patterns
 - Look at animation system for component interaction examples
+
+## Task Master AI Instructions
+**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
+@./.taskmaster/CLAUDE.md

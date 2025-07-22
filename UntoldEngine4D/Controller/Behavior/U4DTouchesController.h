@@ -16,6 +16,8 @@
 #include "U4DVector2n.h"
 #import <MetalKit/MetalKit.h>
 
+class U4DVerbCoinManager;
+
 namespace U4DEngine {
     
 class U4DWorld;
@@ -36,6 +38,7 @@ private:
     U4DWorld *gameWorld;
     U4DGameModelInterface *gameModel;
     bool receivedAction;
+    U4DVerbCoinManager *verbCoinManager;
     
 public:
     //constructor

@@ -13,6 +13,7 @@
 #include "U4DTouchesController.h"
 #include "U4DVector3n.h"
 #include "UserCommonProtocols.h"
+#include "U4DInteractiveEntity.h"
 
 class GameController:public U4DEngine::U4DTouchesController{
   
@@ -21,6 +22,10 @@ private:
     U4DEngine::U4DJoyStick *joyStick;
     U4DEngine::U4DButton *myButtonA;
     U4DEngine::U4DButton *myButtonB;
+    
+    U4DInteractiveEntity *interactiveChest;
+    U4DInteractiveEntity *interactiveDoor;
+    U4DInteractiveEntity *interactiveCharacter;
     
 public:
     
@@ -31,11 +36,23 @@ public:
     
     void init();
     
+    void setupInteractiveObjects();
+    
     void actionOnButtonA();
     
     void actionOnButtonB();
     
     void actionOnJoystick();
+    
+    void examineChest();
+    void openChest();
+    void pickUpFromChest();
+    
+    void examineDoor();
+    void openDoor();
+    
+    void examineCharacter();
+    void talkToCharacter();
 
 };
 
