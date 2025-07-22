@@ -10,12 +10,17 @@
 #define U4DVerbIcon_h
 
 #include <stdio.h>
-#include "U4DImage.h"
-#include "U4DVector2n.h"
-#include "U4DCallbackInterface.h"
+#include "../../Objects/ImageObjects/U4DImage.h"
+#include "../../MathematicEngine/U4DVector2n.h"
+#include "../../Callback/U4DCallbackInterface.h"
 #include <string>
 
-class U4DText;
+namespace U4DEngine {
+    class U4DText;
+    class U4DFontLoader;
+}
+
+using namespace U4DEngine;
 
 typedef enum{
     eVerbIconIdle,
@@ -24,7 +29,7 @@ typedef enum{
     eVerbIconSelected
 } VERBICONSTATES;
 
-class U4DVerbIcon : public U4DImage {
+class U4DVerbIcon : public U4DEngine::U4DImage {
     
 private:
     
@@ -33,8 +38,9 @@ private:
     std::string verbName;
     std::string tooltipText;
     U4DText *tooltipLabel;
+    U4DFontLoader *fontLoader;
     
-    U4DCallbackInterface *actionCallback;
+    U4DEngine::U4DCallbackInterface *actionCallback;
     
     float hoverScale;
     float normalScale;
@@ -54,7 +60,7 @@ public:
     
     void setTexture(const std::string& textureName);
     
-    void setCallback(U4DCallbackInterface *callback);
+    void setCallback(U4DEngine::U4DCallbackInterface *callback);
     
     void setHovered(bool hovered);
     bool isHovered();
@@ -73,7 +79,7 @@ public:
     void setNormalScale(float scale);
     float getNormalScale();
     
-    bool isPointInside(U4DVector2n& point);
+    bool isPointInside(U4DEngine::U4DVector2n& point);
     
     std::string getVerbName();
     std::string getTooltipText();

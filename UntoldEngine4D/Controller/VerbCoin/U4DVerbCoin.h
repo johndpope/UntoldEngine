@@ -10,11 +10,13 @@
 #define U4DVerbCoin_h
 
 #include <stdio.h>
-#include "U4DVisibleEntity.h"
-#include "U4DVector2n.h"
-#include "U4DCallbackInterface.h"
-#include "U4DVector3n.h"
+#include "../../Objects/U4DVisibleEntity.h"
+#include "../../MathematicEngine/U4DVector2n.h"
+#include "../../Callback/U4DCallbackInterface.h"
+#include "../../MathematicEngine/U4DVector3n.h"
 #include <vector>
+
+using namespace U4DEngine;
 
 class U4DVerbIcon;
 class U4DTouches;
@@ -39,13 +41,13 @@ struct VerbData {
     VERBTYPE type;
     std::string iconTexture;
     std::string tooltipText;
-    U4DCallbackInterface *callback;
+    U4DEngine::U4DCallbackInterface *callback;
     
-    VerbData(VERBTYPE t, const std::string& icon, const std::string& tooltip, U4DCallbackInterface *cb)
+    VerbData(VERBTYPE t, const std::string& icon, const std::string& tooltip, U4DEngine::U4DCallbackInterface *cb)
         : type(t), iconTexture(icon), tooltipText(tooltip), callback(cb) {}
 };
 
-class U4DVerbCoin : public U4DVisibleEntity {
+class U4DVerbCoin : public U4DEngine::U4DVisibleEntity {
     
 private:
     
@@ -54,17 +56,17 @@ private:
     std::vector<U4DVerbIcon*> verbIcons;
     std::vector<VerbData> availableVerbs;
     
-    U4DVector2n centerPosition;
+    U4DEngine::U4DVector2n centerPosition;
     float radius;
     float fadeTimer;
     float showDuration;
     
     U4DVerbIcon* hoveredIcon;
-    U4DCallbackInterface *onVerbSelected;
+    U4DEngine::U4DCallbackInterface *onVerbSelected;
     
     void arrangeIconsRadially();
     void updateIconPositions();
-    U4DVerbIcon* getIconAtPosition(U4DVector2n& position);
+    U4DVerbIcon* getIconAtPosition(U4DEngine::U4DVector2n& position);
     
 public:
     
@@ -74,7 +76,7 @@ public:
     
     void update(double dt);
     
-    void showVerbCoin(U4DVector2n position, std::vector<VerbData>& verbs);
+    void showVerbCoin(U4DEngine::U4DVector2n position, std::vector<VerbData>& verbs);
     
     void hideVerbCoin();
     
@@ -86,13 +88,13 @@ public:
     void setShowDuration(float duration);
     float getShowDuration();
     
-    void setCallback(U4DCallbackInterface *callback);
+    void setCallback(U4DEngine::U4DCallbackInterface *callback);
     
     void touchBegan(U4DTouches *touches);
     void touchMoved(U4DTouches *touches);
     void touchEnded(U4DTouches *touches);
     
-    void addVerb(VERBTYPE type, const std::string& iconTexture, const std::string& tooltipText, U4DCallbackInterface *callback);
+    void addVerb(VERBTYPE type, const std::string& iconTexture, const std::string& tooltipText, U4DEngine::U4DCallbackInterface *callback);
     
     void clearVerbs();
     

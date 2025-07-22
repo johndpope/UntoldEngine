@@ -818,6 +818,26 @@
 		03F2DB131F191F9B00F77B78 /* U4DRenderSkybox.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03F2DB091F191F9B00F77B78 /* U4DRenderSkybox.mm */; };
 		03F2DB141F191F9B00F77B78 /* U4DRenderWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03F2DB0B1F191F9B00F77B78 /* U4DRenderWorld.mm */; };
 		03F2DB211F19471300F77B78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2DB201F19471300F77B78 /* QuartzCore.framework */; };
+		832B13FB2E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F52E3023D600AFBC82 /* U4DVerbCoin.mm */; };
+		832B13FC2E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */; };
+		832B13FD2E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */; };
+		832B13FE2E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */; };
+		832B13FF2E3023D600AFBC82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 832B13F12E3023D600AFBC82 /* README.md */; };
+		832B14002E3023D600AFBC82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 832B13F12E3023D600AFBC82 /* README.md */; };
+		832B14012E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F52E3023D600AFBC82 /* U4DVerbCoin.mm */; };
+		832B14022E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */; };
+		832B14032E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */; };
+		832B14042E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */; };
+		832B14052E3023D600AFBC82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 832B13F12E3023D600AFBC82 /* README.md */; };
+		832B14062E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F52E3023D600AFBC82 /* U4DVerbCoin.mm */; };
+		832B14072E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */; };
+		832B14082E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */; };
+		832B14092E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */; };
+		832B140A2E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F52E3023D600AFBC82 /* U4DVerbCoin.mm */; };
+		832B140B2E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */; };
+		832B140C2E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */; };
+		832B140D2E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */; };
+		832B140E2E3023D600AFBC82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 832B13F12E3023D600AFBC82 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -985,7 +1005,6 @@
 		03722D812029F2150080D069 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
 		03722D832029F21A0080D069 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
 		03722D852029F2250080D069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		03722D872029F4280080D069 /* UntoldEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UntoldEngine-Prefix.pch"; sourceTree = "<group>"; };
 		03722DD7202B3BEB0080D069 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		03722DD9202B90AA0080D069 /* U4DGamepadController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DGamepadController.mm; sourceTree = "<group>"; };
 		03722DDA202B90AA0080D069 /* U4DGamepadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U4DGamepadController.h; sourceTree = "<group>"; };
@@ -1224,6 +1243,16 @@
 		03F2DB0A1F191F9B00F77B78 /* U4DRenderWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = U4DRenderWorld.h; path = RenderEngine/U4DRenderWorld.h; sourceTree = "<group>"; };
 		03F2DB0B1F191F9B00F77B78 /* U4DRenderWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = U4DRenderWorld.mm; path = RenderEngine/U4DRenderWorld.mm; sourceTree = "<group>"; };
 		03F2DB201F19471300F77B78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		832B13F02E30237900AFBC82 /* UntoldEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UntoldEngine-Prefix.pch"; sourceTree = "<group>"; };
+		832B13F12E3023D600AFBC82 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		832B13F22E3023D600AFBC82 /* U4DInteractiveEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U4DInteractiveEntity.h; sourceTree = "<group>"; };
+		832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DInteractiveEntity.mm; sourceTree = "<group>"; };
+		832B13F42E3023D600AFBC82 /* U4DVerbCoin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U4DVerbCoin.h; sourceTree = "<group>"; };
+		832B13F52E3023D600AFBC82 /* U4DVerbCoin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DVerbCoin.mm; sourceTree = "<group>"; };
+		832B13F62E3023D600AFBC82 /* U4DVerbCoinManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U4DVerbCoinManager.h; sourceTree = "<group>"; };
+		832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DVerbCoinManager.mm; sourceTree = "<group>"; };
+		832B13F82E3023D600AFBC82 /* U4DVerbIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U4DVerbIcon.h; sourceTree = "<group>"; };
+		832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = U4DVerbIcon.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1404,13 +1433,6 @@
 			name = MacArrowKeys;
 			sourceTree = "<group>";
 		};
-		034DBC791A73E08C00AC43EB /* Debugger */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Debugger;
-			sourceTree = "<group>";
-		};
 		03584D951951FB1700C974A2 /* TransformationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1554,7 +1576,7 @@
 		03759B29175B0135002EB5D9 = {
 			isa = PBXGroup;
 			children = (
-				03722D872029F4280080D069 /* UntoldEngine-Prefix.pch */,
+				832B13F02E30237900AFBC82 /* UntoldEngine-Prefix.pch */,
 				036FB55718CE9CB8000EA639 /* Game */,
 				037E2066192D3DED00D375F2 /* Resources */,
 				03759B42175B0135002EB5D9 /* UntoldEngine4D */,
@@ -1598,36 +1620,35 @@
 		03759B42175B0135002EB5D9 /* UntoldEngine4D */ = {
 			isa = PBXGroup;
 			children = (
-				03722DE0202BF7B10080D069 /* PadAxis */,
-				039FF2441F98EF4600B3D253 /* ParticleSystem */,
-				03C2787F1F7D432300AF463C /* VisibilityManager */,
-				03F2DAC31F19161F00F77B78 /* MetalShaders */,
-				03F2DAB81F190E8300F77B78 /* RenderEngine */,
-				03D559E31D58246D00E567D5 /* Logger */,
-				03D374091AE9E746000D8535 /* SpriteAnimation */,
-				034DBC791A73E08C00AC43EB /* Debugger */,
-				03B718E71A0AA83000C94651 /* Light */,
 				03E6EDF61943D9F8007AD131 /* Animation */,
 				03E6EDEF1943D8C7007AD131 /* Callback */,
-				03E6EDEB1943D8A2007AD131 /* Timer */,
-				03E6EDB11943D816007AD131 /* PhysicsEngine */,
-				03E6ED6D1943D710007AD131 /* Scheduler */,
-				03E6ED591943D6FE007AD131 /* Controller */,
-				03B5E7E7193A3F4700800EC8 /* XMLParser */,
-				03A9F70B1AE08C6F00E81A00 /* SpritesAssetLoader */,
-				03A9F7031ADB2F3600E81A00 /* FontAssetLoader */,
-				03B5E7E3193A3F4100800EC8 /* DigitalAssetLoader */,
-				031723C71933FE54001584B1 /* PNGLoader */,
-				036C2449176790DA00ADC1A6 /* GameModel */,
-				03196B3317659BCE008BA0B8 /* Touches */,
 				03759B66175B0382002EB5D9 /* Camera */,
 				03759B71175B0382002EB5D9 /* Constants */,
+				03E6ED591943D6FE007AD131 /* Controller */,
+				03B5E7E3193A3F4100800EC8 /* DigitalAssetLoader */,
 				030C3DF919298226009EF31B /* Director */,
+				03A9F7031ADB2F3600E81A00 /* FontAssetLoader */,
+				036C2449176790DA00ADC1A6 /* GameModel */,
+				03B718E71A0AA83000C94651 /* Light */,
+				03D559E31D58246D00E567D5 /* Logger */,
 				03759B81175B0382002EB5D9 /* MathematicEngine */,
+				03F2DAC31F19161F00F77B78 /* MetalShaders */,
 				03ADFF00177600D9002DDD03 /* ObjectManager */,
-				03584D951951FB1700C974A2 /* TransformationManager */,
 				03759B93175B0383002EB5D9 /* Objects */,
+				03722DE0202BF7B10080D069 /* PadAxis */,
+				039FF2441F98EF4600B3D253 /* ParticleSystem */,
+				03E6EDB11943D816007AD131 /* PhysicsEngine */,
+				031723C71933FE54001584B1 /* PNGLoader */,
+				03F2DAB81F190E8300F77B78 /* RenderEngine */,
+				03E6ED6D1943D710007AD131 /* Scheduler */,
+				03D374091AE9E746000D8535 /* SpriteAnimation */,
+				03A9F70B1AE08C6F00E81A00 /* SpritesAssetLoader */,
+				03E6EDEB1943D8A2007AD131 /* Timer */,
+				03196B3317659BCE008BA0B8 /* Touches */,
+				03584D951951FB1700C974A2 /* TransformationManager */,
 				03759B9E175B0383002EB5D9 /* View */,
+				03C2787F1F7D432300AF463C /* VisibilityManager */,
+				03B5E7E7193A3F4700800EC8 /* XMLParser */,
 			);
 			path = UntoldEngine4D;
 			sourceTree = "<group>";
@@ -1973,15 +1994,16 @@
 		03E6ED591943D6FE007AD131 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				03CAE6372051923E00391B57 /* MacMouse */,
-				0341ABF1204D8C60006E14A9 /* MacArrowKeys */,
-				0341ABC6204BA715006E14A9 /* MacKeys */,
-				03722DE8202CA5510080D069 /* PadJoystick */,
-				03722DE7202CA5450080D069 /* PadButton */,
 				03E6ED5A1943D6FE007AD131 /* Behavior */,
 				03E6ED5F1943D6FE007AD131 /* Button */,
 				03E6ED621943D6FE007AD131 /* Interface */,
 				03E6ED651943D6FE007AD131 /* JoyStick */,
+				0341ABF1204D8C60006E14A9 /* MacArrowKeys */,
+				0341ABC6204BA715006E14A9 /* MacKeys */,
+				03CAE6372051923E00391B57 /* MacMouse */,
+				03722DE7202CA5450080D069 /* PadButton */,
+				03722DE8202CA5510080D069 /* PadJoystick */,
+				832B13FA2E3023D600AFBC82 /* VerbCoin */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2269,6 +2291,22 @@
 			name = MetalShaders;
 			sourceTree = "<group>";
 		};
+		832B13FA2E3023D600AFBC82 /* VerbCoin */ = {
+			isa = PBXGroup;
+			children = (
+				832B13F12E3023D600AFBC82 /* README.md */,
+				832B13F22E3023D600AFBC82 /* U4DInteractiveEntity.h */,
+				832B13F32E3023D600AFBC82 /* U4DInteractiveEntity.mm */,
+				832B13F42E3023D600AFBC82 /* U4DVerbCoin.h */,
+				832B13F52E3023D600AFBC82 /* U4DVerbCoin.mm */,
+				832B13F62E3023D600AFBC82 /* U4DVerbCoinManager.h */,
+				832B13F72E3023D600AFBC82 /* U4DVerbCoinManager.mm */,
+				832B13F82E3023D600AFBC82 /* U4DVerbIcon.h */,
+				832B13F92E3023D600AFBC82 /* U4DVerbIcon.mm */,
+			);
+			path = VerbCoin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2351,21 +2389,21 @@
 				TargetAttributes = {
 					03722B0D2029F0210080D069 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = W9GCJ3HCHT;
+						DevelopmentTeam = KL43C67G5Z;
 						ProvisioningStyle = Automatic;
 					};
 					03722B222029F0220080D069 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = W9GCJ3HCHT;
+						DevelopmentTeam = KL43C67G5Z;
 						ProvisioningStyle = Automatic;
 					};
 					03722B342029F0220080D069 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = W9GCJ3HCHT;
+						DevelopmentTeam = KL43C67G5Z;
 						ProvisioningStyle = Automatic;
 					};
 					03759B33175B0135002EB5D9 = {
-						DevelopmentTeam = W9GCJ3HCHT;
+						DevelopmentTeam = KL43C67G5Z;
 					};
 				};
 			};
@@ -2374,6 +2412,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -2403,6 +2442,7 @@
 				03722B182029F0220080D069 /* Main.storyboard in Resources */,
 				03722D2D2029F16C0080D069 /* myFont.xml in Resources */,
 				03722D442029F16C0080D069 /* ButtonBPressed.png in Resources */,
+				832B14002E3023D600AFBC82 /* README.md in Resources */,
 				03722D402029F16C0080D069 /* joystickDriver.png in Resources */,
 				0304CE8021266432005A0C4C /* astronautWalkAnim.u4d in Resources */,
 				03722D3F2029F16C0080D069 /* joyStickBackground.png in Resources */,
@@ -2435,6 +2475,7 @@
 				03722D5E2029F16D0080D069 /* ButtonBPressed.png in Resources */,
 				03722D5D2029F16D0080D069 /* ButtonB.png in Resources */,
 				03722D4E2029F16D0080D069 /* BackImage.png in Resources */,
+				832B13FF2E3023D600AFBC82 /* README.md in Resources */,
 				03722D5C2029F16D0080D069 /* ButtonAPressed.png in Resources */,
 				03722D522029F16D0080D069 /* RightImage.png in Resources */,
 				03722D5B2029F16D0080D069 /* ButtonA.png in Resources */,
@@ -2467,6 +2508,7 @@
 				03722D752029F16D0080D069 /* ButtonA.png in Resources */,
 				03722D612029F16D0080D069 /* myFont.xml in Resources */,
 				0304CE8121266432005A0C4C /* astronautWalkAnim.u4d in Resources */,
+				832B140E2E3023D600AFBC82 /* README.md in Resources */,
 				03722B3F2029F0220080D069 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2478,6 +2520,7 @@
 				03DBEDF51F9BB29700570A25 /* particle.png in Resources */,
 				0304CE8221266432005A0C4C /* astronautAttributes.u4d in Resources */,
 				0304CE7F21266432005A0C4C /* astronautWalkAnim.u4d in Resources */,
+				832B14052E3023D600AFBC82 /* README.md in Resources */,
 				0304CE7921266432005A0C4C /* astronaut.png in Resources */,
 				039EC6C01FB57F5C0098BB5C /* myFont.xml in Resources */,
 				0361DFA21FAC2141004770FD /* TopImage.png in Resources */,
@@ -2615,6 +2658,10 @@
 				03722B6B2029F0F50080D069 /* U4DScheduler.mm in Sources */,
 				03722BE42029F0F50080D069 /* U4DVector2n.mm in Sources */,
 				03CAE6592051931000391B57 /* U4DMacMouseReleasedState.mm in Sources */,
+				832B14012E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */,
+				832B14022E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */,
+				832B14032E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */,
+				832B14042E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */,
 				03722BB32029F0F50080D069 /* U4DBoundingAABB.mm in Sources */,
 				03722B782029F0F50080D069 /* U4DMatrix4n.mm in Sources */,
 				0341ABFF204D8CA2006E14A9 /* U4DMacKeyPressedState.mm in Sources */,
@@ -2802,6 +2849,10 @@
 				03722C082029F0F70080D069 /* U4DScheduler.mm in Sources */,
 				03722C812029F0F70080D069 /* U4DVector2n.mm in Sources */,
 				03CAE65A2051931000391B57 /* U4DMacMouseReleasedState.mm in Sources */,
+				832B13FB2E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */,
+				832B13FC2E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */,
+				832B13FD2E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */,
+				832B13FE2E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */,
 				03722C502029F0F70080D069 /* U4DBoundingAABB.mm in Sources */,
 				03722C152029F0F70080D069 /* U4DMatrix4n.mm in Sources */,
 				0341AC00204D8CA2006E14A9 /* U4DMacKeyPressedState.mm in Sources */,
@@ -2989,6 +3040,10 @@
 				03722CA52029F0F80080D069 /* U4DScheduler.mm in Sources */,
 				03722D1E2029F0F80080D069 /* U4DVector2n.mm in Sources */,
 				03CAE65B2051931000391B57 /* U4DMacMouseReleasedState.mm in Sources */,
+				832B140A2E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */,
+				832B140B2E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */,
+				832B140C2E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */,
+				832B140D2E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */,
 				03722CED2029F0F80080D069 /* U4DBoundingAABB.mm in Sources */,
 				03722CB22029F0F80080D069 /* U4DMatrix4n.mm in Sources */,
 				0341AC01204D8CA2006E14A9 /* U4DMacKeyPressedState.mm in Sources */,
@@ -3242,6 +3297,10 @@
 				0341AC36204D8D8D006E14A9 /* U4DMacArrowKeyIdleState.mm in Sources */,
 				03E6EDF41943D8C7007AD131 /* U4DCallback.mm in Sources */,
 				03D55A3D1D5D86A900E567D5 /* U4DConvexHullAlgorithm.mm in Sources */,
+				832B14062E3023D600AFBC82 /* U4DVerbCoin.mm in Sources */,
+				832B14072E3023D600AFBC82 /* U4DVerbCoinManager.mm in Sources */,
+				832B14082E3023D600AFBC82 /* U4DVerbIcon.mm in Sources */,
+				832B14092E3023D600AFBC82 /* U4DInteractiveEntity.mm in Sources */,
 				03E6ED691943D6FE007AD131 /* U4DTouchesController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3306,7 +3365,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UntoldEngine-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -3345,7 +3404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UntoldEngine-Prefix.pch";
@@ -3385,7 +3444,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -3423,7 +3482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3463,7 +3522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UntoldEngine-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -3503,7 +3562,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UntoldEngine-Prefix.pch";
@@ -3607,7 +3666,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UntoldEngine4D/UntoldEngine-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3633,7 +3692,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = W9GCJ3HCHT;
+				DEVELOPMENT_TEAM = KL43C67G5Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UntoldEngine4D/UntoldEngine-Prefix.pch";
 				HEADER_SEARCH_PATHS = (

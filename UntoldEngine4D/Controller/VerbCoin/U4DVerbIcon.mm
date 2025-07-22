@@ -7,21 +7,26 @@
 //
 
 #include "U4DVerbIcon.h"
-#include "U4DText.h"
-#include "U4DDirector.h"
+#include "../../Objects/Fonts/U4DText.h"
+#include "../../Director/U4DDirector.h"
+#include "../../FontAssetLoader/U4DFontLoader.h"
 #include <cmath>
+
+using namespace U4DEngine;
 
 U4DVerbIcon::U4DVerbIcon() :
     iconState(eVerbIconIdle),
     tooltipLabel(nullptr),
+    fontLoader(nullptr),
     actionCallback(nullptr),
     hoverScale(1.2f),
     normalScale(1.0f),
     animationTimer(0.0f),
     showTooltip(false) {
     
-    tooltipLabel = new U4DText();
-    addChild(tooltipLabel);
+    // For now, don't create tooltip text to avoid font loading complexity
+    // tooltipLabel will be created when setVerbInfo is called with proper font setup
+    tooltipLabel = nullptr;
 }
 
 U4DVerbIcon::~U4DVerbIcon() {
@@ -29,6 +34,11 @@ U4DVerbIcon::~U4DVerbIcon() {
         removeChild(tooltipLabel);
         delete tooltipLabel;
         tooltipLabel = nullptr;
+    }
+    
+    if (fontLoader != nullptr) {
+        delete fontLoader;
+        fontLoader = nullptr;
     }
     
     if (actionCallback != nullptr) {
@@ -44,30 +54,40 @@ void U4DVerbIcon::update(double dt) {
     switch (iconState) {
         case eVerbIconHovered: {
             float targetScale = hoverScale;
-            float currentScale = getLocalScale().x;
+            float currentScale = normalScale; // Start from normal scale
             float lerpFactor = 5.0f * dt; // Animation speed
             float newScale = currentScale + (targetScale - currentScale) * lerpFactor;
             
-            U4DVector3n scaleVector(newScale, newScale, 1.0f);
-            scaleTo(scaleVector);
+            // Use setImageDimension for scaling effect
+            float baseWidth = 64.0f; // Base icon size
+            float baseHeight = 64.0f;
+            setImageDimension(baseWidth * newScale, baseHeight * newScale);
             
             if (tooltipLabel != nullptr && showTooltip) {
-                tooltipLabel->setVisibility(true);
+                // Add tooltip to scene graph to make it visible
+                if (tooltipLabel->getParent() == nullptr) {
+                    addChild(static_cast<U4DEntity*>(tooltipLabel));
+                }
             }
             break;
         }
         
         case eVerbIconIdle: {
             float targetScale = normalScale;
-            float currentScale = getLocalScale().x;
+            float currentScale = normalScale; // Assume at normal scale
             float lerpFactor = 5.0f * dt;
             float newScale = currentScale + (targetScale - currentScale) * lerpFactor;
             
-            U4DVector3n scaleVector(newScale, newScale, 1.0f);
-            scaleTo(scaleVector);
+            // Use setImageDimension for scaling effect
+            float baseWidth = 64.0f; // Base icon size
+            float baseHeight = 64.0f;
+            setImageDimension(baseWidth * newScale, baseHeight * newScale);
             
             if (tooltipLabel != nullptr) {
-                tooltipLabel->setVisibility(false);
+                // Remove tooltip from scene graph to hide it
+                if (tooltipLabel->getParent() != nullptr) {
+                    removeChild(tooltipLabel);
+                }
             }
             showTooltip = false;
             break;
@@ -75,8 +95,10 @@ void U4DVerbIcon::update(double dt) {
         
         case eVerbIconPressed: {
             float pressedScale = normalScale * 0.9f;
-            U4DVector3n scaleVector(pressedScale, pressedScale, 1.0f);
-            scaleTo(scaleVector);
+            // Use setImageDimension for scaling effect
+            float baseWidth = 64.0f; // Base icon size
+            float baseHeight = 64.0f;
+            setImageDimension(baseWidth * pressedScale, baseHeight * pressedScale);
             break;
         }
         
@@ -89,17 +111,28 @@ void U4DVerbIcon::setVerbInfo(const std::string& name, const std::string& toolti
     verbName = name;
     tooltipText = tooltip;
     
+    // Create tooltip text if not already created and tooltip text is provided
+    if (tooltipLabel == nullptr && !tooltip.empty()) {
+        fontLoader = new U4DFontLoader();
+        tooltipLabel = new U4DText(fontLoader, 1.0f);
+        addChild(static_cast<U4DEntity*>(tooltipLabel));
+    }
+    
     if (tooltipLabel != nullptr) {
-        tooltipLabel->setText(tooltipText);
+        tooltipLabel->setText(tooltipText.c_str());
         
         U4DVector3n tooltipPosition(0.0f, 0.15f, 0.0f); // Above icon
         tooltipLabel->translateTo(tooltipPosition);
-        tooltipLabel->setVisibility(false);
+        // Remove tooltip from scene graph initially (hidden)
+        if (tooltipLabel->getParent() != nullptr) {
+            removeChild(tooltipLabel);
+        }
     }
 }
 
 void U4DVerbIcon::setTexture(const std::string& textureName) {
-    loadTexture(textureName.c_str());
+    // Use setImage from U4DImage base class
+    setImage(textureName.c_str(), 64.0f, 64.0f);
 }
 
 void U4DVerbIcon::setCallback(U4DCallbackInterface *callback) {
@@ -139,7 +172,17 @@ void U4DVerbIcon::executeAction() {
 void U4DVerbIcon::setTooltipVisible(bool visible) {
     showTooltip = visible;
     if (tooltipLabel != nullptr) {
-        tooltipLabel->setVisibility(visible);
+        if (visible) {
+            // Add to scene graph to show
+            if (tooltipLabel->getParent() == nullptr) {
+                addChild(static_cast<U4DEntity*>(tooltipLabel));
+            }
+        } else {
+            // Remove from scene graph to hide
+            if (tooltipLabel->getParent() != nullptr) {
+                removeChild(tooltipLabel);
+            }
+        }
     }
 }
 
@@ -199,12 +242,18 @@ VERBICONSTATES U4DVerbIcon::getState() {
 void U4DVerbIcon::animateIn() {
     animationTimer = 0.0f;
     
-    U4DVector3n startScale(0.1f, 0.1f, 1.0f);
-    scaleTo(startScale);
+    // Start with small size and make visible
+    float baseWidth = 64.0f;
+    float baseHeight = 64.0f;
+    setImageDimension(baseWidth * 0.1f, baseHeight * 0.1f);
     
-    setVisibility(true);
+    // Icon is already visible through the scene graph - no action needed
+    // Animation scaling will be handled by setImageDimension
 }
 
 void U4DVerbIcon::animateOut() {
-    setVisibility(false);
+    // Hide the icon by removing it from scene graph or moving it off-screen
+    // For now, just move it off-screen
+    U4DVector3n offScreen(-10000.0f, -10000.0f, 0.0f);
+    translateTo(offScreen);
 }
