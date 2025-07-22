@@ -22,7 +22,7 @@ namespace U4DEngine {
         u4dObject=uU4DParticleSystem;
         
         //It seems we do need to init the texture objects with a null descriptor
-        //initTextureSamplerObjectNull();
+        initTextureSamplerObjectNull();
     }
     
     U4DRenderParticleSystem::~U4DRenderParticleSystem(){
@@ -80,7 +80,7 @@ namespace U4DEngine {
         mtlRenderPipelineDescriptor.vertexFunction=vertexProgram;
         mtlRenderPipelineDescriptor.fragmentFunction=fragmentProgram;
         mtlRenderPipelineDescriptor.colorAttachments[0].pixelFormat=director->getMTLView().colorPixelFormat;
-        mtlRenderPipelineDescriptor.depthAttachmentPixelFormat=director->getMTLView().depthStencilPixelFormat;
+        mtlRenderPipelineDescriptor.depthAttachmentPixelFormat=MTLPixelFormatDepth32Float;
         
         mtlRenderPipelineDescriptor.colorAttachments[0].blendingEnabled=YES;
         mtlRenderPipelineDescriptor.colorAttachments[0].rgbBlendOperation=MTLBlendOperationAdd;
